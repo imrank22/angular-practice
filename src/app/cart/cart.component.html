@@ -1,0 +1,16 @@
+<div *ngIf="showCart">
+    <div *ngFor="let item of items">
+        <h3>{{item.name}}</h3>
+        <p>{{item.price}}</p>
+      </div>
+</div>
+<div *ngIf="items">
+  <button (click)="clearCart()">
+    Clear Cart
+  </button>
+</div>
+<div>
+  <a routerLink="/shipping">
+    Shipping Prices
+  </a>
+</div>

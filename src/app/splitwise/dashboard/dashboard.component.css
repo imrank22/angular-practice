@@ -1,0 +1,227 @@
+.main-head{
+    background-color: #5bc5a7;
+    height: 36px;
+}
+.split-logo{
+    width: 120px;
+    padding: 5px;
+    margin-left: 16%;
+}
+.user{
+    width: 25px;
+    margin-right: 5%;
+    font-size: 13px;
+    border-radius: 25px;
+}
+.user-logo{
+    padding: 5px;
+    /* float: right; */
+    text-align: right;
+    color: #fff;
+    margin-right: 19%;
+}
+.open>.dropdown-menu {
+    display: block;
+   /*  height: 159px; */
+    
+    /* color: #fff; */
+    background-color: #fff;
+
+    /* display: inline-grid; */
+    text-align: center;
+}
+.open>.dropdown-menu a {
+    color:  #000;
+    text-decoration: none
+}
+.open>.dropdown-menu p {
+    height: 30px;
+    padding: 5px;
+    margin: 0px;
+}
+.open>.dropdown-menu p:hover {
+background-color: #5bc5a7;
+color: #fff
+}
+.dropdown-toggle {
+    background: none;
+    padding: 0px;
+    color: #fff;
+    width: 34%;
+}
+.dropdown-toggle:focus , .dropdown-toggle:hover{
+    background-color: #53b398;
+}
+.drop{
+    width: 13px;
+    margin-left: 5%;
+}
+.white-bg{
+    background-color: #fff;
+    box-shadow:0px 0px 8px 3px #ddd;
+    height: 100vh;
+}
+.btn-group{
+    padding: 14px 0px;
+    text-align: right;
+}
+.head-dash{
+    background-color: #ddd;
+    height: 60px;
+}
+.man-stand{
+    padding: 27px 55px;
+}
+.man-stand img{
+    width: 162px;
+}
+.add-desc{
+    color: #a6a5a5;
+    font-size: 17px;
+    font-family: cursive;
+    padding-right: 18px;
+}
+
+.flag{
+    width: 20px;
+}
+.left-actions p:hover{
+    background-color: #ddd
+}
+.left-actions p{
+    padding: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+.left-actions{
+    padding-left: 34%;
+}
+.left-actions a{
+    text-decoration: none;
+    color: slategray;
+}
+.groups{
+    background-color: lightgray;
+    width: 105%;
+    margin-left: 1%;
+    padding: 4px 0px;
+}
+.name, .name-action{
+    font-weight: 600
+}
+.activities{
+    padding: 23px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    margin-left: 0%;
+}
+.activities p{
+    margin: 0;
+    margin-left: 5%;
+}
+.activities img{
+    width: 45px
+}
+.modal-add{
+    border: none;
+    width: 70%;
+    display: initial;
+}
+.modal-dialog{
+    width: 30%;
+}
+.modal-header{
+    background-color: #5bc5a7;
+    font-size: 20px;
+    padding: 10px 12px;
+    color: #fff;
+}
+.modal-dialog p{
+    margin: 0px
+}
+.choose-pay{
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 17px;
+}
+.btn-record{
+    width: 75%;
+    background-color: #3ec99a;
+    color: #fff;
+}
+.btn-record:hover{
+    background-color: #33a67f
+}
+.paypal{
+    text-align: center;
+    margin-top: 3%;
+}
+small{
+    color: gray
+}
+.note{
+    margin-top: 20%;
+}
+
+.invite{
+    border: 1px solid #ddd;
+    width: 100%;
+}
+.invite p{
+    background-color: #5bc5a7;
+    color: #fff;
+}
+.enter-email{
+    padding: 7px 0px;
+    text-align: center;
+}
+.enter-email input{
+    width: 90%;
+    border-radius: 3px;
+    border: 1px solid #ddd;width: 90%;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+.send-invite{
+    padding: 0px 8px;
+}
+.send-invite button{
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 3%;
+}
+.send-invite button:hover{
+    background-color: darkgray
+}
+.tick-img{
+    padding: 4%
+}
+.tick-img img{
+    width: 30%
+}
+.add-frn-exp{
+    width: 234px;
+}
+.add-frn-exp input{
+    border-radius: 3px;
+    border: 1px solid #DDD;
+}
+.add-frn-exp button{
+    margin-left: 2%;
+    background: none;
+    border: none;
+    background-color: #dedede;
+    border-radius: 3px;
+}
+.add-frn-exp button:hover{
+    background-color: #cac7c7;
+}
+.dashboard-span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(https://dx0qysuen8cbs.cloudfront.net/assets/fat_rabbit/dashboard2.png);
+    background-position: -16px 0px;
+    margin: 1px 8px -2px 0px;
+}

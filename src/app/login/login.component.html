@@ -1,0 +1,18 @@
+<div class="container white-bg">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Login: </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login">
+        <label>Username: </label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="username">
+        <label>Password: </label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+        <button class="btn btn-primary" (click)="login()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
