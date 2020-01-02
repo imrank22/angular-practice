@@ -5,12 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './splitwise/dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
+import { Demo1Component } from './material/demo1/demo1.component';
 
 const appRoutes : Routes = [
-/*     {
+    {
         path : '',
         component : LoginComponent
-    }, */
+    },
     {
         path: 'header',
         component: HeaderComponent
@@ -38,6 +39,10 @@ const appRoutes : Routes = [
     {
         path: 'second/:id',
         loadChildren: './second/second.module#SecondModule'
+    },
+    {
+        path: 'mat-demo1',
+        component: Demo1Component
     }
 
 ]

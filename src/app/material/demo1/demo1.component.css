@@ -1,0 +1,7 @@
+.filler{
+    flex: 1;
+}
+.gap{
+    flex: 0.04; 
+    margin-right: 0 10 0 0;
+}

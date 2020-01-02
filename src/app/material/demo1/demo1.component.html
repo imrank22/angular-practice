@@ -1,0 +1,182 @@
+<!-- Autocomplete DropDown -->
+<form class="tp-form">
+    <mat-form-field>
+        <input type="text" placeholder="States" matInput   >
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let state of states" [value]="state.name">
+                {{state.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+<br>
+<!-- Checkbox -->
+<h2 class="tp-h2">Checkbox configuration</h2>
+<section class="tp-section">
+  <mat-checkbox class="tp-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+  <mat-checkbox class="tp-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+</section>
+<section class="tp-section">
+  <mat-checkbox class="tp-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+</section>
+<h2 class="tp-h2">Result</h2>
+<section class="tp-section">
+  <mat-checkbox class="tp-margin" [(ngModel)]="checked" [(indeterminate)]="indeterminate"
+    [labelPosition]="labelPosition" [disabled]="disabled">
+    Sample Checkbox
+  </mat-checkbox>
+</section>
+<br>
+
+<!-- DatePicker -->
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a Date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<br>
+<!-- Icon, Hint, Textarea,Select option,FormCOntrol Validators -->
+<mat-form-field>
+    <input matInput placeholder="Input">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Sample Hint</mat-hint>
+</mat-form-field> <br>
+<mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-select placeholder="Select Organisation">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<br>
+<form>
+<mat-form-field>
+    <input matInput placeholder="favourite food" value="Pizza">
+</mat-form-field>
+<mat-form-field>
+    <textarea matInput placeholder="Enter comment"></textarea>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Email" [formControl]="emailControl">
+    <mat-error *ngIf="emailControl.hasError('email')">Enter valid email address</mat-error>
+    <mat-error *ngIf="emailControl.hasError('required')">Email is required</mat-error>
+</mat-form-field>
+</form>
+<br>
+
+<!-- Range Slider -->
+<mat-slider [(ngModel)]="value" [vertical]="vertical" [thumbLabel]="thumbLabel" [invert]="invert"></mat-slider>
+
+<br>
+<!-- Button DropDown Menu Items -->
+<mat-form-field>
+    <input matInput [matMenuTriggerFor]="menu" placeholder="Select">
+</mat-form-field>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>One</button>
+    <button mat-menu-item>Two</button>
+    <button mat-menu-item [matMenuTriggerFor]="sub">Three</button>
+</mat-menu>
+<mat-menu #sub="matMenu">
+    <button mat-menu-item>Sub1</button>
+    <button mat-menu-item>Sub2</button>
+</mat-menu>
+
+<br>
+<!-- Navbar -->
+<mat-toolbar>
+    <span class="gap">File</span>
+    <span>About</span>
+    <span class="filler"></span>
+    <span>Logout</span>
+</mat-toolbar>
+<br>
+
+<!-- Expansion Panel -->
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Personal Data</mat-panel-title>
+        <mat-panel-description>Enter Your Details</mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+        <input matInput placeholder="Enter Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Enter Age">
+    </mat-form-field>
+</mat-expansion-panel>
+
+<br>
+<!-- Stepper Form -->
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Step 1</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="First Name" formControlName="firstCtrl">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="firstCtrl">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Step 2</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        Details Sent..!
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>        
+    </mat-step>
+</mat-horizontal-stepper>
+<br>
+
+<!-- Tabs -->
+<mat-tab-group>
+    <mat-tab label="A">One</mat-tab>
+    <mat-tab label="B">Two</mat-tab>
+    <mat-tab label="C">Three</mat-tab>    
+</mat-tab-group>
+<br>
+
+<!-- Buttons -->
+<div>
+    <button mat-button>Basic</button>
+    <button mat-raised-button>Raised</button>
+    <button mat-stroked-button>Stroked</button>
+    <button mat-flat-button>Flat</button>
+    <button mat-icon-button>
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-fab>Fab</button>
+    <button mat-mini-fab>Mini</button>
+</div>
+<br>
+
+<!-- Spinner -->
+<mat-progress-spinner [mode]="mode" [value]="value">
+</mat-progress-spinner>
+<br>
+
+
