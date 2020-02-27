@@ -1,0 +1,191 @@
+a{
+    user-select: none;
+}
+
+.navbar-collapse{
+    background: rebeccapurple;
+}
+a.nav-link{
+    color: #fff!important;
+    padding: 18px 20px 15px 20px!important;
+    font-size: 17px;
+}
+
+.navbar-brand {
+    padding: 9px 8px;
+    height: 47px;
+    position: relative;
+    bottom: 1px;
+    padding-left: 13px;
+}
+
+.navbar{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: #fff!important;
+}
+
+.tabactive{
+    border-bottom: 4px solid yellow;
+}
+.nav-item:hover{
+    transition: 0.4s;
+    border-bottom: 4px solid yellow;
+    cursor: pointer
+}
+
+.dropdown-item{
+    padding: 25px 15px;
+    border: 1px solid #ddd;
+    border-width: 0px 0px 1px 0px;
+}
+
+.grp-submenu{
+    display: none;
+    left: 158px;
+    top: 75px;
+    position: absolute;
+    top: 77px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.grp-menu:hover .grp-submenu{
+    display: block
+}
+
+
+.drop1:hover>.menu1 {
+    display: block;
+}
+.drop1>.menu1{
+    position: absolute;
+    left: 157px;
+    top: 70px!important;
+}
+.drop1>.menu1 li{
+    color: #555;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0px;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    background-color: #fff!important
+}
+.drop1>.menu1 li a{
+    color: #555;
+}
+
+
+.drop2:hover>.menurule {
+    display: block;
+}
+.drop2>.menu2{
+    position: absolute;
+    left: 157px;
+    top: 144px!important;
+}
+.drop2>.menu2 li{
+    color: #555;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding:20px 0px;
+}
+.menu3{
+    top: 88px!important;
+    position: absolute;
+    left: 157px;
+}
+.menu3 li{
+    color: #555;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0px;
+}
+.drop2>.menu2 li a{
+    color: #555;
+}
+.menu3 li a{
+    color: #555;
+}
+
+.dropdown-submenu>ul>li{
+    cursor: pointer;
+}
+
+
+/* Right */
+
+.dropdown-toggle::after{
+    display: none!important;
+}
+.right .dropdown-toggle::after{
+    display: inline-block!important;
+}
+
+
+.right-nav{
+    position: absolute;
+    right: 35px;
+    bottom: 0px;
+}
+.role-module{
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+.role-module a{
+    padding: 0px!important;
+    color: #fff
+}
+
+.user-img{
+    list-style: none;
+    display: inline-grid;
+    padding: 4px 10px;
+    margin-left: 5px;
+    top: 9px;
+    position: relative;
+    left: 13px;
+    cursor: pointer;
+}
+.user-img:hover{
+    border-bottom: 4px solid yellow;
+    transition: 0.4s
+}
+.user-img img{
+    position: relative;
+    top: 10px;
+    width: 30px;
+    margin-left: 0px;
+}
+.fa-caret-down{
+    color: #fff;
+    position: relative;
+    font-size: 15px;
+    left: 35px;
+    bottom: 12px;
+}
+
+
+.show{
+    display: inline-grid!important;
+}
+.right-menu a{
+    padding: 10px;
+}
+.right-menu{
+    margin-left: -100px;
+}
+.right-menu a img{
+    width: 18px;
+    top: 0px;
+}
+
+.dropdown-item img{
+    margin-right: 8px;
+}

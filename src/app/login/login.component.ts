@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         timeOut : 3000,
         positionClass : 'toast-top-center'
       })
-      this.router.navigate(['product-list'])
+      this.router.navigate(['dashboard'])
     }
     else if(this.username == null || this.password == null || this.username == "" || this.password == ""){
       console.log("Wrong Credentials")

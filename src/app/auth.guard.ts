@@ -14,7 +14,7 @@ constructor(private loginService : LoginserviceService, private router :Router){
       return true;
     }
     else{
-      this.router.navigate(['login'])
+      this.router.navigate([''])
       return false;
     }
   }

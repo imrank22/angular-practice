@@ -1,0 +1,216 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand"><img src="../../assets/images/logo.png" alt="AquaPay"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" [ngClass]="dashactive? 'tabactive' : '' " (click)="dashEvent()">
+            <a [routerLink]="['/main/dashboard']" class="nav-link">Dashboard</a>
+          </li>
+
+
+          <!-- Organisation -->
+          <li
+            *ngIf="rolename=='as' || rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker' || rolename=='aschecker' || rolename=='maker' || rolename=='checker'"
+            class="nav-item dropdown" [ngClass]="orgactive? 'tabactive' : '' ">
+            <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Organisation
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a [routerLink]="['/main/organisation']" class="dropdown-item" (click)="orgEvent()">View Details</a>
+
+            <!-- Groups -->
+          <li class="dropdown-submenu drop1">
+            <a class="dropdown-item" tabindex="-1"><img src="../../../assets/images/group.png" alt="">Groups</a>
+            <ul class="dropdown-menu menu1">
+              <li 
+              *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker'" 
+              [routerLink]="['/main/register-group']"
+              >
+                <a (click)="orgEvent()"><img src="../../../assets/images/group.png" alt="">Add Group</a>
+              </li>
+              <li 
+              *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker' || rolename=='as' || rolename=='aschecker'" 
+              (click)="orgEvent()"
+              >
+                <a [routerLink]="['/main/view-groups']"><img src="../../../assets/images/group.png" alt="">View Group</a>
+              </li>
+              <li 
+              *ngIf="rolename=='as' || rolename=='aschecker'"
+              (click)="orgEvent()"
+              >
+                <a [routerLink]="['/main/pending-groups']"><img src="../../../assets/images/group.png" alt="">Pending Group</a>
+              </li>
+            </ul>
+          </li>
+            <!-- Groups -->
+
+            <!-- Rule -->
+          <li class="dropdown-submenu drop2">
+            <a class="dropdown-item" tabindex="-1"><img src="../../../assets/images/gavel.png" alt="">Rule</a>
+            <ul class="dropdown-menu menurule"
+              [ngClass]="(rolename == 'checker' ? 'menu3' : 'menu2') || (rolename == 'maker' ? 'menu3' : 'menu2')">
+              <li (click)="orgEvent()">
+                <a [routerLink]="['/main/view-rules']"><img src="../../../assets/images/gavel.png" alt="">Rule Validator</a>
+              </li>
+              <li 
+              *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker'" 
+              (click)="orgEvent()"
+              >
+                <a [routerLink]="['/main/register-rule']"><img src="../../../assets/images/gavel.png" alt="">Add Unitary</a>
+              </li>
+              <li 
+              *ngIf="rolename=='as' || rolename=='aschecker'"
+              (click)="orgEvent()"
+              >
+                <a [routerLink]="['/main/pending-rules']"><img src="../../../assets/images/gavel.png" alt="">Pending Rules</a>
+              </li>
+            </ul>
+          </li>
+            <!-- Rule -->
+
+      </div>
+      </li>
+      <!-- Organisation -->
+
+
+      <!-- GST -->
+      <li
+        *ngIf="rolename=='as' || rolename=='ccchecker' || rolename=='ccmaker' || rolename=='aschecker' || rolename=='maker' || rolename=='checker'"
+        class="nav-item dropdown" [ngClass]="gstactive? 'tabactive' : '' ">
+        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          GST
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          <a 
+          *ngIf="rolename=='maker' || rolename=='ccmaker'" class="dropdown-item" 
+          [routerLink]="['/main/gstreg-unitary']" 
+          (click)="gstEvent()"
+          >
+            <img src="../../../assets/images/add-unitary-bills.png"
+            alt="">
+            Add Unitary
+          </a>
+
+          <a *ngIf="rolename=='maker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/gstreg-bulk']" (click)="gstEvent()"><img src="../../../assets/images/add-bulk.png" alt=""> Add Bulk</a>
+
+          <a class="dropdown-item" [routerLink]="['/main/view-gstin']" (click)="gstEvent()"><img
+            src="../../../assets/images/add-bulk.png" alt="">View GST</a>
+          <a *ngIf="rolename=='aschecker' || rolename=='checker' || rolename=='ccchecker'" class="dropdown-item" [routerLink]="['/main/pending-gsts']" (click)="gstEvent()"><img
+            src="../../../assets/images/add-bulk.png" alt="">Pending GST</a>
+        </div>
+      </li>
+      <!-- GST -->
+
+      <!-- Payment -->
+      <li
+        *ngIf="rolename=='as' || rolename=='ccchecker' || rolename=='ccmaker' || rolename=='aschecker' || rolename=='maker' || rolename=='checker'"
+        class="nav-item dropdown" [ngClass]="payactive? 'tabactive' : '' ">
+        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Payments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a *ngIf="rolename=='maker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/payments-unitary']" (click)="payEvent()"><img
+            src="../../../assets/images/make-payment.png" alt="">GST Unitary
+            Payment</a>
+          <a *ngIf="rolename=='maker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/payments-bulk']" (click)="payEvent()"><img src="../../../assets/images/make-payment.png" alt="">GST Bulk Payments</a>
+          <a class="dropdown-item" [routerLink]="['/main/view-payments']" (click)="payEvent()"><img
+            src="../../../assets/images/make-payment.png" alt="">View GST Payments</a>
+          <a *ngIf="rolename=='aschecker' || rolename=='checker' || rolename=='ccchecker'" class="dropdown-item" [routerLink]="['/main/pending-payments']" (click)="payEvent()"><img
+            src="../../../assets/images/make-payment.png" alt="">Pending GST
+            Payments</a>
+        </div>
+      </li>
+      <!-- Payment -->
+
+      <!-- Users -->
+      <li
+        *ngIf="rolename=='as' || rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker' || rolename=='aschecker'"
+        class="nav-item dropdown" [ngClass]="useractive? 'tabactive' : '' ">
+        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Users
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/main/view-users']" (click)="userEvent()"><img src="../../../assets/images/person.png" alt=""
+            (click)="clickUserEvent()">View Users</a>
+          <a *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/register-user']" (click)="userEvent()"><img src="../../../assets/images/person.png" alt="">Add Unitary</a>
+          <a *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/user-bulk-upload']" (click)="userEvent()"><img
+            src="../../../assets/images/person.png" alt="">Add Bulk</a>
+          <a *ngIf="rolename=='as' || rolename=='aschecker'" class="dropdown-item" [routerLink]="['/main/pending-users']" (click)="userEvent()"><img src="../../../assets/images/person.png" alt="">Pending Users</a>
+        </div>
+      </li>
+      <!-- Users -->
+
+      <!-- Cards -->
+      <li class="nav-item dropdown" [ngClass]="cardactive? 'tabactive' : '' ">
+        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Cards
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/main/view-cards']" (click)="cardEvent()"><img
+            src="../../../assets/images/credit-card1.png" alt="">View Cards</a>
+          <a *ngIf="rolename=='ccadmin' || rolename=='ccchecker' || rolename=='ccmaker'" class="dropdown-item" [routerLink]="['/main/register-card']" (click)="cardEvent()"><img
+            src="../../../assets/images/credit-card1.png" alt="">Add Card</a>
+          <a *ngIf="rolename=='as' || rolename=='aschecker'" class="dropdown-item" [routerLink]="['/main/pending-cards']" (click)="cardEvent()"><img src="../../../assets/images/credit-card1.png" alt="">  Pending Cards</a>
+        </div>
+      </li>
+      <!-- Cards -->
+
+      </ul>
+
+
+      <div class="right-nav">
+        <ul>
+          <li class="role-module" style="display: inline-grid">
+            <a class="" style="font-size: 14px;"> RM </a>
+            <a class="" style="font-size: 12px;">(GST Module)</a>
+          </li>
+          <li class="user-img" [ngClass]="useractive? 'tabactive' : '' ">
+            <img src="../../assets/images/gst-user.png" alt="User" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-caret-down"></i>
+
+            <div class="dropdown-menu right-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/main/my-profile']"><img src="../../assets/images/user.png"
+                  alt=""> My Profile</a>
+              <a class="dropdown-item" [routerLink]="['/main/dashboard']"><img src="../../assets/images/contact.png"
+                  alt=""> Contact Us</a>
+              <a class="dropdown-item" [routerLink]="['/main/set-new-password']"><img
+                  src="../../assets/images/password.png" alt=""> Reset Password</a>
+              <a class="dropdown-item" [routerLink]="['/main/notification']"><img
+                  src="../../assets/images/alarm-bell.png" alt=""> Notification Settings</a>
+              <a class="dropdown-item" (click)="logOut()"><img src="../../assets/images/logout.png" alt=""> Logout</a>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+
+  </div>
+
+
+
+
+
+  </nav>
+</div>
+</div>
+
+<mat-form-field>
+  <mat-label>Inherited calendar color</mat-label>
+  <input matInput [matDatepicker]="picker1">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>

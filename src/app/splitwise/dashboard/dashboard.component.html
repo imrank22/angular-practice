@@ -1,38 +1,58 @@
-<div class="container-fluid" class="main-head">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img class="split-logo"
-              src="https://dx0qysuen8cbs.cloudfront.net/assets/core/logo-wordmark-horizontal-white-short-c309b91b96261a8a993563bdadcf22a89f00ebb260f4f04fd814c2249a6e05d4.svg"
-              alt="">
-          </div>
-          <div class="col-md-6">
-            <div class="user-logo">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img class="user"
-                    src="https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-orange43-50px.png"
-                    alt="">
-                  <label>Imran Khan</label>
-                  <img class="drop" src="../../../assets/images/down-arrow.png" alt="">
-                </button>
-                <div class="dropdown-menu name-drop" style="margin-left: 55%;width: 43%;"
-                  aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">
-                    <p>Your Account</p>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <p>Create Group</p>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <p>Fairness Calculators</p>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <p>Log Out</p>
-                  </a>
+<!-- <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
+<!-- <div class="loadingio-spinner-dual-ball-mmulwnxlpws" *ngIf="showLoading">
+  <div class="ldio-myh1ml2e8w">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div> -->
+<div class="full" *ngIf="showLoading">
+  <div class="spinner"></div>
+</div>
+<div class="container-fluid pack">
+  <div class="container-fluid" class="main-head">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="split-logo"
+                src="https://dx0qysuen8cbs.cloudfront.net/assets/core/logo-wordmark-horizontal-white-short-c309b91b96261a8a993563bdadcf22a89f00ebb260f4f04fd814c2249a6e05d4.svg"
+                alt="">
+            </div>
+            <div class="col-md-6">
+              <div class="user-logo">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="user"
+                      src="https://s3.amazonaws.com/splitwise/uploads/user/default_avatars/avatar-orange43-50px.png"
+                      alt="">
+                    <label>Imran Khan</label>
+                    <img class="drop" src="../../../assets/images/down-arrow.png" alt="">
+                  </button>
+                  <div class="dropdown-menu name-drop" style="margin-left: 55%;width: 43%;"
+                    aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">
+                      <p>Your Account</p>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <p>Create Group</p>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <p>Fairness Calculators</p>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <p>Log Out</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -41,365 +61,362 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="left-actions">
-        <a (click)="dashboard()">
-          <p [style.border-left]="activedash ? '4px solid #5bc5a7': 'none'"><span
-              class="dashboard-span"></span>Dashboard</p>
-        </a>
-        <a (click)="recent()">
-          <p [style.border-left]="activerecent ? '4px solid #5bc5a7': 'none'"> <img class="flag"
-              src="../../../assets/images/flag.png" alt=""> Recent Activity</p>
-        </a>
-        <div class="input-prepend">
-          <span class="add-on"><i class="icon-search"></i></span><input class="span2" id="filter_search" type="text"
-            placeholder="Filter by name">
-        </div>
-        <div class="expense_filter_links">
-          <a href="#/all" id="group--1" class="open"><i class="icon-list"></i>
-            <p>All expenses</p>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="left-actions">
+          <a (click)="dashboard()">
+            <p [style.border-left]="activedash ? '4px solid #5bc5a7': 'none'"><span
+                class="dashboard-span"></span>Dashboard</p>
           </a>
-          <div class="tags">
-            <div class="header">
-              <div class="row groups">
-                <div class="col-md-8" style="padding: 0px 4px;">Groups</div>
-                <div class="col-md-4"><span class="fa fa-plus">add</span></div>
-              </div>
-            </div>
-
-
-            <a href="#/groups/14579936" data-filterable="true" data-search-string="nov marraige" data-active="true"><i
-                class="icon-tag"></i>
-              <p> Nov Marraige</p>
-            </a>
-
+          <a (click)="recent()">
+            <p [style.border-left]="activerecent ? '4px solid #5bc5a7': 'none'"> <img class="flag"
+                src="../../../assets/images/flag.png" alt=""> Recent Activity</p>
+          </a>
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-search"></i></span><input class="span2" id="filter_search" type="text"
+              placeholder="Filter by name">
           </div>
-          <a href="#" class="show_inactive_accounts" id="groups_show_inactive_accounts" style="display: none;">
-            Hiding accounts settled for more than 30 days. Show »
-          </a>
-
-          <div class="people">
-            <div class="header">
-              <div class="row groups">
-                <div class="col-md-8" style="padding: 0px 4px;">Friends</div>
-                <div class="col-md-4"><span class="fa fa-plus">add</span></div>
+          <div class="expense_filter_links">
+            <a href="#/all" id="group--1" class="open"><i class="icon-list"></i>
+              <p>All expenses</p>
+            </a>
+            <div class="tags">
+              <div class="header">
+                <div class="row groups">
+                  <div class="col-md-8" style="padding: 0px 4px;">Groups</div>
+                  <div class="col-md-4"><span class="fa fa-plus">add</span></div>
+                </div>
               </div>
-            </div>
-
-            <div *ngFor="let friend of friendsname; let i= index" (click)="onSelectFriend(friend)">
-              <a data-filterable="true" data-search-string="achin" data-active="true"><i class="icon-user"></i>
-                <p>{{friend.name}}</p>
+              <a href="#/groups/14579936" data-filterable="true" data-search-string="nov marraige" data-active="true"><i
+                  class="icon-tag"></i>
+                <p> Nov Marraige</p>
               </a>
             </div>
-
-            <!--  <a href="#/friends/16366273" data-filterable="true" data-search-string="arti krushnarao girdhar" data-active="true"><i class="icon-user"></i><p> Arti Krushnarao Girdhar</p></a>
-                                  
-                                    <a href="#/friends/12882524" data-filterable="true" data-search-string="dipanshu pathak" data-active="true"><i class="icon-user"></i><p> Dipanshu Pathak</p></a>
-                                  
-                                    <a href="#/friends/16154661" data-filterable="true" data-search-string="krnsingam50" data-active="true"><i class="icon-user"></i> <p>Krnsingam50</p></a>
-                                  
-                                    <a href="#/friends/6136817" data-filterable="true" data-search-string="namrata" data-active="true"><i class="icon-user"></i> <p>Namrata</p></a>
-                                  
-                                    <a href="#/friends/12942569" data-filterable="true" data-search-string="narendra yadav" data-active="true"><i class="icon-user"></i> <p>Narendra Yadav</p></a>
-                                  
-                                    <a href="#/friends/19770865" data-filterable="true" data-search-string="pankaj experdel" data-active="true"><i class="icon-user"></i> <p>Pankaj Experdel</p></a>
-                                  
-                                    <a href="#/friends/19770883" data-filterable="true" data-search-string="pratik bokey" data-active="true"><i class="icon-user"></i> <p>Pratik Bokey</p></a>
-                                  
-                                    <a href="#/friends/11382121" data-filterable="true" data-search-string="sandeep vyas" data-active="true"><i class="icon-user"></i> <p>Sandeep Vyas</p></a>
-                                  
-                                    <a href="#/friends/24155893" data-filterable="true" data-search-string="ubedullah" data-active="true"><i class="icon-user"></i> <p>Ubedullah</p></a> -->
-
-
+            <a href="#" class="show_inactive_accounts" id="groups_show_inactive_accounts" style="display: none;">
+              Hiding accounts settled for more than 30 days. Show »
+            </a>
+  
+            <div class="people">
+              <div class="header">
+                <div class="row groups">
+                  <div class="col-md-8" style="padding: 0px 4px;">Friends</div>
+                  <div class="col-md-4"><span class="fa fa-plus">add</span></div>
+                </div>
+              </div>
+  
+              <div *ngFor="let friend of friendsname; let i= index" (click)="onSelectFriend(friend)">
+                <a data-filterable="true" data-active="true"><i class="icon-user"></i>
+                  <p>{{friend.name}}</p>
+                </a>
+              </div>
+  
+              <!--  <a href="#/friends/16366273" data-filterable="true" data-search-string="arti krushnarao girdhar" data-active="true"><i class="icon-user"></i><p> Arti Krushnarao Girdhar</p></a>
+                                    
+                                      <a href="#/friends/12882524" data-filterable="true" data-search-string="dipanshu pathak" data-active="true"><i class="icon-user"></i><p> Dipanshu Pathak</p></a>
+                                    
+                                      <a href="#/friends/16154661" data-filterable="true" data-search-string="krnsingam50" data-active="true"><i class="icon-user"></i> <p>Krnsingam50</p></a>
+                                    
+                                      <a href="#/friends/6136817" data-filterable="true" data-search-string="namrata" data-active="true"><i class="icon-user"></i> <p>Namrata</p></a>
+                                    
+                                      <a href="#/friends/12942569" data-filterable="true" data-search-string="narendra yadav" data-active="true"><i class="icon-user"></i> <p>Narendra Yadav</p></a>
+                                    
+                                      <a href="#/friends/19770865" data-filterable="true" data-search-string="pankaj experdel" data-active="true"><i class="icon-user"></i> <p>Pankaj Experdel</p></a>
+                                    
+                                      <a href="#/friends/19770883" data-filterable="true" data-search-string="pratik bokey" data-active="true"><i class="icon-user"></i> <p>Pratik Bokey</p></a>
+                                    
+                                      <a href="#/friends/11382121" data-filterable="true" data-search-string="sandeep vyas" data-active="true"><i class="icon-user"></i> <p>Sandeep Vyas</p></a>
+                                    
+                                      <a href="#/friends/24155893" data-filterable="true" data-search-string="ubedullah" data-active="true"><i class="icon-user"></i> <p>Ubedullah</p></a> -->
+  
+  
+            </div>
+            <a href="#" class="show_inactive_accounts" id="friends_show_inactive_accounts" style="display: none;">
+              Hiding accounts settled for more than 30 days. Show »
+            </a>
           </div>
-          <a href="#" class="show_inactive_accounts" id="friends_show_inactive_accounts" style="display: none;">
-            Hiding accounts settled for more than 30 days. Show »
-          </a>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="invite">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>Invite friends</p>
+                  </div>
+                </div>
+                <div class="row enter-email">
+                  <div class="col-md-12">
+                    <input type="text" placeholder="Enter an email address">
+                  </div>
+                </div>
+                <div class="row send-invite">
+                  <div class="col-md-12">
+                    <button>Send invite</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="invite">
-              <div class="row">
-                <div class="col-md-12">
-                  <p>Invite friends</p>
+  
+      </div>
+  
+  
+      <!-- Dasboard -->
+      <div class="col-md-6" *ngIf="showDashboard">
+        <div class="white-bg">
+          <div class="head-dash">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h2 style="font-weight: 600;margin-top: 6%;">Dashboard</h2>
+              </div>
+              <div class="col-md-6">
+                <div class="row btn-group">
+                  <div class="col-md-6">
+                    <button class="btn btn-warning" data-target="#addexpensemodal" data-toggle="modal">Add an
+                      expense</button>
+                  </div>
+                  <div class="col-md-6" style="padding: 0px">
+                    <button class="btn btn-primary" data-target="#settleupmodal" data-toggle="modal">Settle up</button>
+                  </div>
                 </div>
               </div>
-              <div class="row enter-email">
+            </div>
+          </div>
+          <div class="row setup">
+            <div class="col-md-6">
+              <div class="man-stand">
+                <img
+                  src="https://dx0qysuen8cbs.cloudfront.net/assets/fat_rabbit/empty-table-effed2a2e610373b6407d746cb95858f5d47329c8610bb70f1fd2040dfa35165.png"
+                  alt="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p style="font-size: 28px;margin-top: 15%;">You're all settled up. <br> Awesome</p>
+              <br>
+              <p class="add-desc">To add a new expense, click the orange “Add an expense” button.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Dashboard End -->
+  
+  
+  
+      <!-- Recent start -->
+      <div class="col-md-6" *ngIf="showRecent">
+        <div class="white-bg">
+          <div class="head-dash">
+            <div class="col-md-12">
+              <div class="col-md-12">
+                <h2 style="font-weight: 600;margin-top: 3%;">Recent Activities</h2>
+              </div>
+              <!-- <div class="col-md-6">
+                                  <div class="row btn-group">
+                                      <div class="col-md-6">
+                                          <button class="btn btn-warning">Add an expense</button>
+                                      </div>
+                                      <div class="col-md-6" style="padding: 0px">
+                                              <button class="btn btn-primary">Settle up</button>
+                                      </div>
+                                  </div>
+                              </div> -->
+            </div>
+          </div>
+          <div class="row recent-activ">
+            <div class="col-md-12">
+              <div class="row activities">
                 <div class="col-md-12">
-                  <input type="text" placeholder="Enter an email address">
+                  <div class="row">
+                    <div class="col-md-2" style="text-align: right;">
+                      <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/4.png" alt="">
+  
+                    </div>
+                    <div class="col-md-10" style="padding: 0px">
+                      <p><span class="name">Dipanshu P.</span> added <span class="name">Achin</span> to the group
+                        <span class="name-action">"November Marriage"</span></p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="row send-invite">
+              <div class="row activities">
                 <div class="col-md-12">
-                  <button>Send invite</button>
+                  <div class="row">
+                    <div class="col-md-2" style="text-align: right">
+                      <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-p.png" alt="">
+                    </div>
+                    <div class="col-md-10" style="padding: 0px">
+                      <p><span class="name">Dipanshu P.</span> recorded a payment from <span class="name">Imran K.</span>
+                        in
+                        <span class="name-action">"November Marriage"</span></p>
+                      <p style="color: #5bc5a7;font-size: 15px;">
+                        You paid INR3,123.86
+                      </p>
+                      <p style="color: gray;font-size: 14px;">Aug 22</p>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="row activities">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-2" style="text-align: right">
+                      <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-18.png" alt="">
+                    </div>
+                    <div class="col-md-10" style="padding: 0px">
+                      <p><span class="name">Dipanshu P.</span> added <span class="name">"Knp to Ltt 1st ticket"</span> in
+                        <span class="name-action">"November Marriage"</span></p>
+                    </div>
+                  </div>
+  
+                  <!-- <p style="color: #5bc5a7;font-size: 15px;">
+                                              You paid INR3,123.86
+                                          </p>
+                                          <p style="color: gray;font-size: 14px;">Aug 22</p> -->
+                </div>
+              </div>
+              <div class="row activities">
+                <div class="col-md-12" style="display: inline-flex;">
+                  <div class="row">
+                    <div class="col-md-2" style="text-align: right">
+                      <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-18.png" alt="">
+                    </div>
+                    <div class="col-md-10" style="padding: 0px">
+                      <p><span class="name">Dipanshu P.</span> added <span class="name">Narendra Y.</span> to the group
+                        <span class="name-action">"November Marriage"</span></p>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+              <div class="row activities">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-2" style="text-align: right">
+                      <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/4.png" alt=""></div>
+                    <div class="col-md-10" style="padding: 0px">
+                      <p><span class="name">Dipanshu P.</span> added <span class="name">Ubed M.</span> to the group
+                        <span class="name-action">"November Marriage"</span></p>
+                    </div>
+                  </div>
+  
+  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-    </div>
-
-
-    <!-- Dasboard -->
-    <div class="col-md-6" *ngIf="showDashboard">
-      <div class="white-bg">
-        <div class="head-dash">
-          <div class="col-md-12">
-            <div class="col-md-6">
-              <h2 style="font-weight: 600;margin-top: 6%;">Dashboard</h2>
-            </div>
-            <div class="col-md-6">
-              <div class="row btn-group">
-                <div class="col-md-6">
-                  <button class="btn btn-warning" data-target="#addexpensemodal" data-toggle="modal">Add an
-                    expense</button>
-                </div>
-                <div class="col-md-6" style="padding: 0px">
-                  <button class="btn btn-primary" data-target="#settleupmodal" data-toggle="modal">Settle up</button>
+      <!-- Recent End -->
+  
+      <!-- Friends Expense -->
+      <div class="col-md-6" *ngIf="showFriendExpense">
+        <div class="white-bg">
+          <div class="head-dash">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h2 style="font-weight: 600;margin-top: 6%;
+                                      font-size: 28px;">{{selectedFriend.name}}</h2>
+              </div>
+              <div class="col-md-6">
+                <div class="row btn-group">
+                  <div class="col-md-6">
+                    <button class="btn btn-warning" data-toggle="dropdown">Add an expense</button>
+                    <ul class="dropdown-menu text-center add-frn-exp" style="margin-left: -90px;
+                                              " role="menu">
+                      <li><input type="text" autofocus>
+                        <button>Add</button></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6" style="padding: 0px">
+                    <button class="btn btn-primary">Settle up</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row setup">
-          <div class="col-md-6">
-            <div class="man-stand">
+          <div class="row tick-img text-center">
+            <div class="col-md-12">
               <img
-                src="https://dx0qysuen8cbs.cloudfront.net/assets/fat_rabbit/empty-table-effed2a2e610373b6407d746cb95858f5d47329c8610bb70f1fd2040dfa35165.png"
+                src="https://dx0qysuen8cbs.cloudfront.net/assets/fat_rabbit/app/checkmark-circle-ae319506ad7196dc77eede0aed720a682363d68160a6309f6ebe9ce1983e45f0.png"
                 alt="">
             </div>
           </div>
-          <div class="col-md-6">
-            <p style="font-size: 28px;margin-top: 15%;">You're all settled up. <br> Awesome</p>
-            <br>
-            <p class="add-desc">To add a new expense, click the orange “Add an expense” button.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Dashboard End -->
-
-
-
-    <!-- Recent start -->
-    <div class="col-md-6" *ngIf="showRecent">
-      <div class="white-bg">
-        <div class="head-dash">
-          <div class="col-md-12">
+          <div class="row expense text-center">
             <div class="col-md-12">
-              <h2 style="font-weight: 600;margin-top: 3%;">Recent Activities</h2>
-            </div>
-            <!-- <div class="col-md-6">
-                                <div class="row btn-group">
-                                    <div class="col-md-6">
-                                        <button class="btn btn-warning">Add an expense</button>
-                                    </div>
-                                    <div class="col-md-6" style="padding: 0px">
-                                            <button class="btn btn-primary">Settle up</button>
-                                    </div>
-                                </div>
-                            </div> -->
-          </div>
-        </div>
-        <div class="row recent-activ">
-          <div class="col-md-12">
-            <div class="row activities">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-2" style="text-align: right;">
-                    <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/4.png" alt="">
-
-                  </div>
-                  <div class="col-md-10" style="padding: 0px">
-                    <p><span class="name">Dipanshu P.</span> added <span class="name">Achin</span> to the group
-                      <span class="name-action">"November Marriage"</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row activities">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-2" style="text-align: right">
-                    <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-p.png" alt="">
-                  </div>
-                  <div class="col-md-10" style="padding: 0px">
-                    <p><span class="name">Dipanshu P.</span> recorded a payment from <span class="name">Imran K.</span>
-                      in
-                      <span class="name-action">"November Marriage"</span></p>
-                    <p style="color: #5bc5a7;font-size: 15px;">
-                      You paid INR3,123.86
-                    </p>
-                    <p style="color: gray;font-size: 14px;">Aug 22</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="row activities">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-2" style="text-align: right">
-                    <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-18.png" alt="">
-                  </div>
-                  <div class="col-md-10" style="padding: 0px">
-                    <p><span class="name">Dipanshu P.</span> added <span class="name">"Knp to Ltt 1st ticket"</span> in
-                      <span class="name-action">"November Marriage"</span></p>
-                  </div>
-                </div>
-
-                <!-- <p style="color: #5bc5a7;font-size: 15px;">
-                                            You paid INR3,123.86
-                                        </p>
-                                        <p style="color: gray;font-size: 14px;">Aug 22</p> -->
-              </div>
-            </div>
-            <div class="row activities">
-              <div class="col-md-12" style="display: inline-flex;">
-                <div class="row">
-                  <div class="col-md-2" style="text-align: right">
-                    <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/0-18.png" alt="">
-                  </div>
-                  <div class="col-md-10" style="padding: 0px">
-                    <p><span class="name">Dipanshu P.</span> added <span class="name">Narendra Y.</span> to the group
-                      <span class="name-action">"November Marriage"</span></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="row activities">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-2" style="text-align: right">
-                    <img src="https://s3.amazonaws.com/splitwise/uploads/notifications/v2/4.png" alt=""></div>
-                  <div class="col-md-10" style="padding: 0px">
-                    <p><span class="name">Dipanshu P.</span> added <span class="name">Ubed M.</span> to the group
-                      <span class="name-action">"November Marriage"</span></p>
-                  </div>
-                </div>
-
-
-              </div>
+              <p style="color: gray;margin: 0">You and {{selectedFriend.name}} are all settled up</p> <br>
+              <a style="cursor: pointer">Show settled expenses</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Recent End -->
-
-    <!-- Friends Expense -->
-    <div class="col-md-6" *ngIf="showFriendExpense">
-      <div class="white-bg">
-        <div class="head-dash">
-          <div class="col-md-12">
-            <div class="col-md-6">
-              <h2 style="font-weight: 600;margin-top: 6%;
-                                    font-size: 28px;">{{selectedFriend.name}}</h2>
-            </div>
-            <div class="col-md-6">
-              <div class="row btn-group">
-                <div class="col-md-6">
-                  <button class="btn btn-warning" data-toggle="dropdown">Add an expense</button>
-                  <ul class="dropdown-menu text-center add-frn-exp" style="margin-left: -90px;
-                                            " role="menu">
-                    <li><input type="text" autofocus>
-                      <button>Add</button></li>
-                  </ul>
-                </div>
-                <div class="col-md-6" style="padding: 0px">
-                  <button class="btn btn-primary">Settle up</button>
-                </div>
-              </div>
+      <!-- Friends Expense end -->
+  
+      <!-- Dashboard and Recent Right View -->
+      <div class="col-md-3" *ngIf="showDashboard || showRecent">
+        <div>
+          <div class="row">
+            <div class="col-md-12">
+              <p>Get Splitwise Pro!</p>
             </div>
           </div>
-        </div>
-        <div class="row tick-img text-center">
-          <div class="col-md-12">
-            <img
-              src="https://dx0qysuen8cbs.cloudfront.net/assets/fat_rabbit/app/checkmark-circle-ae319506ad7196dc77eede0aed720a682363d68160a6309f6ebe9ce1983e45f0.png"
-              alt="">
+          <div class="row">
+            <div class="col-md-12">
+              <img
+                src="https://dx0qysuen8cbs.cloudfront.net/assets/pro/logo-337b1a7d372db4b56c075c7893d68bfc6873a65d2f77d61b27cb66b6d62c976c.svg"
+                alt="">
+            </div>
           </div>
-        </div>
-        <div class="row expense text-center">
-          <div class="col-md-12">
-            <p style="color: gray;margin: 0">You and {{selectedFriend.name}} are all settled up</p> <br>
-            <a style="cursor: pointer">Show settled expenses</a>
+          <div class="row">
+            <div class="col-md-12">
+              <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-warning" (click)="matDemo()">Material</button>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Dashboard and recent Right View end -->
+  
+  
+      <!-- <div class="col-md-3">
+              
+          </div> -->
+  
     </div>
-    <!-- Friends Expense end -->
-
-    <!-- Dashboard and Recent Right View -->
-    <div class="col-md-3" *ngIf="showDashboard || showRecent">
-      <div>
-        <div class="row">
-          <div class="col-md-12">
-            <p>Get Splitwise Pro!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <img
-              src="https://dx0qysuen8cbs.cloudfront.net/assets/pro/logo-337b1a7d372db4b56c075c7893d68bfc6873a65d2f77d61b27cb66b6d62c976c.svg"
-              alt="">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p>Subscribe to Splitwise Pro for no ads, currency conversion, charts, search, and more.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button class="btn btn-warning">Learn More</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Dashboard and recent Right View end -->
-
-
-    <!-- <div class="col-md-3">
-            
-        </div> -->
-
   </div>
-</div>
-<!-- Add expense modal start -->
-<div class="row">
-  <div class="col-md-12">
-    <div class="modal fade" role="dialog" id="addexpensemodal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="row">
-              <div class="col-md-12">
-                <p>Add an expense</p>
+  <!-- Add expense modal start -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal fade" role="dialog" id="addexpensemodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Add an expense</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-12">
-                <p>With you and: <span>
-                    <input class="modal-add form-control" type="text" placeholder="Enter names or email address">
-                  </span></p>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>With you and: <span>
+                      <input class="modal-add form-control" type="text" placeholder="Enter names or email address">
+                    </span></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-md-12">
-                <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
-                <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+            <div class="modal-footer">
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
               </div>
             </div>
           </div>
@@ -407,48 +424,48 @@
       </div>
     </div>
   </div>
-</div>
-<!--         Add Expense Modal ENd -->
-
-<!-- Settle up modal start -->
-<div class="row">
-  <div class="col-md-12">
-    <div class="modal fade" role="dialog" id="settleupmodal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="row">
-              <div class="col-md-12">
-                <p>Settle Up</p>
+  <!-- Add Expense Modal ENd -->
+  
+  <!-- Settle up modal start -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal fade" role="dialog" id="settleupmodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Settle Up</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="modal-body">
-            <div class="row choose-pay">
-              <div class="col-md-12">
-                <p>Choose a payment method</p>
+            <div class="modal-body">
+              <div class="row choose-pay">
+                <div class="col-md-12">
+                  <p>Choose a payment method</p>
+                </div>
+              </div>
+              <div class="row" style="    text-align: center;">
+                <div class="col-md-12">
+                  <button class="btn btn-record">Record a cash payment</button>
+                </div>
+              </div>
+              <div class="row paypal">
+                <div class="col-md-12">
+                  <button class="btn btn-record">Pay Pal</button>
+                </div>
+              </div>
+              <div class="row note">
+                <div class="col-md-12"><small>Note: PayPal payments via debit or credit card incur fees of up to 4%. Venmo
+                    payments via credit card incur fees of 3%. Visit PayPal.com or Venmo.com for details.</small></div>
               </div>
             </div>
-            <div class="row" style="    text-align: center;">
-              <div class="col-md-12">
-                <button class="btn btn-record">Record a cash payment</button>
-              </div>
-            </div>
-            <div class="row paypal">
-              <div class="col-md-12">
-                <button class="btn btn-record">Pay Pal</button>
-              </div>
-            </div>
-            <div class="row note">
-              <div class="col-md-12"><small>Note: PayPal payments via debit or credit card incur fees of up to 4%. Venmo
-                  payments via credit card incur fees of 3%. Visit PayPal.com or Venmo.com for details.</small></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-md-12">
-                <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
-                <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+            <div class="modal-footer">
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
               </div>
             </div>
           </div>
@@ -456,13 +473,13 @@
       </div>
     </div>
   </div>
+  <!-- Settle up modal end -->
 </div>
-<!-- Settle up modal end -->
 
 <!-- <div>
-                <button class="btn btn-primary" (click)>Toggle</button>
-                <ul *ngIf="toggle">
-                    <li>One</li>
-                    <li>two</li>
-                </ul>
-            </div> -->
+  <button class="btn btn-primary" (click)>Toggle</button>
+  <ul *ngIf="toggle">
+    <li>One</li>
+    <li>two</li>
+  </ul>
+</div> -->

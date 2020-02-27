@@ -16,12 +16,36 @@ import { DashboardComponent } from './splitwise/dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { Demo1Component } from './material/demo1/demo1.component';
 import { MatProgressSpinnerModule,MatTabsModule,MatStepperModule,MatExpansionModule,MatToolbarModule,MatMenuModule, MatButtonModule,MatSliderModule,MatDatepickerModule,MatOptionModule, MatSelectModule, MatIconModule, MatNativeDateModule, MatAutocompleteModule, MatInputModule } from '@angular/material';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION} from  'ngx-ui-loader';
+import { ParentComponent } from './newPrac/parent/parent.component';
+import { ChildComponent } from './newPrac/child/child.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NgDatepickerModule } from 'ng2-datepicker';
+
+import { CustomPipes } from "../app/appPipes/custompipes";
+import { AnimationsComponent } from './animations/animations.component';
+
+import { NgwWowModule } from 'ngx-wow';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: 'red',
+  bgsPosition: POSITION.bottomCenter,
+  bgsSize: 40,
+  bgsType: SPINNER.threeBounce, // background spinner type
+  fgsType: SPINNER.threeBounce, // progress bar thickness
+};
+
 
 @NgModule({
   declarations: [
-    AppComponent, CartComponent, LoginComponent, DashboardComponent, HeaderComponent, Demo1Component,
+    AppComponent, CustomPipes , CartComponent, LoginComponent, DashboardComponent, HeaderComponent, Demo1Component, ParentComponent, ChildComponent, NavbarComponent, AnimationsComponent,
   ],
   imports: [
+    NgwWowModule,
+    NgDatepickerModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxSpinnerModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     MatStepperModule,
@@ -48,7 +72,7 @@ import { MatProgressSpinnerModule,MatTabsModule,MatStepperModule,MatExpansionMod
     ToastrModule.forRoot(), // ToastrModule added
     AngularFontAwesomeModule
   ],
-  providers: [AuthGuard],
+  providers: [ AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

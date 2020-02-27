@@ -1,0 +1,11 @@
+<!-- <p *ngIf="isSelected">
+    Selected product is : {{selectedProduct}}
+</p>
+<p *ngIf="!isSelected">Please Select your product</p> -->
+
+
+<div class="white-bg">
+    <input type="text" name="username" [(ngModel)]="username" placeholder="Create User">
+    <button class="btn btn-secondary" (click)="createUser()">Create</button>
+    <p *ngIf="total_user > 0">Total Users: {{total_user}}</p>
+</div>

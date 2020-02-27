@@ -1,3 +1,4 @@
+<ngx-ui-loader></ngx-ui-loader>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -42,3 +43,28 @@
     </div>
   </div>
 </div> -->
+<div class="row">
+  <div class="form-row">
+    <input type="text" name="gstnum" [(ngModel)]="gstnum" id="form-email" class="form-textbox" required>
+    <label for="form-email" class="form-label">GSTIN</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="verify()">Verify</button>
+  </div>
+</div>
+<div class="container white-bg">
+  <div class="row">
+    <div class="col-md-12">
+      <table>
+        <ng-container>
+          <tr>
+            <td></td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</div>
+

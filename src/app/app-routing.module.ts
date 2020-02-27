@@ -6,6 +6,10 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './splitwise/dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { Demo1Component } from './material/demo1/demo1.component';
+import { ParentComponent } from './newPrac/parent/parent.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AnimationsComponent } from './animations/animations.component';
+import { ChildComponent } from './newPrac/child/child.component';
 
 const appRoutes : Routes = [
     {
@@ -19,10 +23,6 @@ const appRoutes : Routes = [
     ,{
         path : 'dashboard',
         component : DashboardComponent
-    },
-    {
-        path : 'login',
-        component : LoginComponent
     },
     {
         path : 'cart',
@@ -43,6 +43,18 @@ const appRoutes : Routes = [
     {
         path: 'mat-demo1',
         component: Demo1Component
+    },
+    {
+        path: 'parent',
+        component: ParentComponent
+    },
+    {
+        path: 'navbar',
+        component: NavbarComponent
+    },
+    {
+        path: 'animate',
+        component: AnimationsComponent
     }
 
 ]
